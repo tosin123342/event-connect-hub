@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as BrowseRouteImport } from './routes/browse'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as PlannerDashboardRouteImport } from './routes/planner-dashboard'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as PlannersPlannerIdRouteImport } from './routes/planners.$plannerId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrowseRoute = BrowseRouteImport.update({
+  id: '/browse',
+  path: '/browse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannerDashboardRoute = PlannerDashboardRouteImport.update({
+  id: '/planner-dashboard',
+  path: '/planner-dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannersPlannerIdRoute = PlannersPlannerIdRouteImport.update({
+  id: '/planners/$plannerId',
+  path: '/planners/$plannerId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/browse': typeof BrowseRoute
+  '/checkout': typeof CheckoutRoute
+  '/dashboard': typeof DashboardRoute
+  '/login': typeof LoginRoute
+  '/planner-dashboard': typeof PlannerDashboardRoute
+  '/pricing': typeof PricingRoute
+  '/signup': typeof SignupRoute
+  '/planners/$plannerId': typeof PlannersPlannerIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/browse': typeof BrowseRoute
+  '/checkout': typeof CheckoutRoute
+  '/dashboard': typeof DashboardRoute
+  '/login': typeof LoginRoute
+  '/planner-dashboard': typeof PlannerDashboardRoute
+  '/pricing': typeof PricingRoute
+  '/signup': typeof SignupRoute
+  '/planners/$plannerId': typeof PlannersPlannerIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/browse': typeof BrowseRoute
+  '/checkout': typeof CheckoutRoute
+  '/dashboard': typeof DashboardRoute
+  '/login': typeof LoginRoute
+  '/planner-dashboard': typeof PlannerDashboardRoute
+  '/pricing': typeof PricingRoute
+  '/signup': typeof SignupRoute
+  '/planners/$plannerId': typeof PlannersPlannerIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/browse'
+    | '/checkout'
+    | '/dashboard'
+    | '/login'
+    | '/planner-dashboard'
+    | '/pricing'
+    | '/signup'
+    | '/planners/$plannerId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/browse'
+    | '/checkout'
+    | '/dashboard'
+    | '/login'
+    | '/planner-dashboard'
+    | '/pricing'
+    | '/signup'
+    | '/planners/$plannerId'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/browse'
+    | '/checkout'
+    | '/dashboard'
+    | '/login'
+    | '/planner-dashboard'
+    | '/pricing'
+    | '/signup'
+    | '/planners/$plannerId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  BrowseRoute: typeof BrowseRoute
+  CheckoutRoute: typeof CheckoutRoute
+  DashboardRoute: typeof DashboardRoute
+  LoginRoute: typeof LoginRoute
+  PlannerDashboardRoute: typeof PlannerDashboardRoute
+  PricingRoute: typeof PricingRoute
+  SignupRoute: typeof SignupRoute
+  PlannersPlannerIdRoute: typeof PlannersPlannerIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/browse': {
+      id: '/browse'
+      path: '/browse'
+      fullPath: '/browse'
+      preLoaderRoute: typeof BrowseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planner-dashboard': {
+      id: '/planner-dashboard'
+      path: '/planner-dashboard'
+      fullPath: '/planner-dashboard'
+      preLoaderRoute: typeof PlannerDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planners/$plannerId': {
+      id: '/planners/$plannerId'
+      path: '/planners/$plannerId'
+      fullPath: '/planners/$plannerId'
+      preLoaderRoute: typeof PlannersPlannerIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  BrowseRoute: BrowseRoute,
+  CheckoutRoute: CheckoutRoute,
+  DashboardRoute: DashboardRoute,
+  LoginRoute: LoginRoute,
+  PlannerDashboardRoute: PlannerDashboardRoute,
+  PricingRoute: PricingRoute,
+  SignupRoute: SignupRoute,
+  PlannersPlannerIdRoute: PlannersPlannerIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
