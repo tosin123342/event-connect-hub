@@ -4,9 +4,9 @@ import { budgetRanges, eventTypes, locations } from "@/lib/marketplace-data";
 
 export function SearchBar({ compact = false }: { compact?: boolean }) {
   const navigate = useNavigate();
-  const [eventType, setEventType] = useState(eventTypes[0]);
-  const [location, setLocation] = useState(locations[0]);
-  const [budget, setBudget] = useState(budgetRanges[1]);
+  const [eventType, setEventType] = useState(eventTypes[0]!);
+  const [location, setLocation] = useState(locations[0]!);
+  const [budget, setBudget] = useState(budgetRanges[1]!);
 
   return (
     <div
@@ -26,9 +26,7 @@ export function SearchBar({ compact = false }: { compact?: boolean }) {
         <Field label="Budget Range" value={budget} onChange={setBudget} options={budgetRanges} />
       </div>
       <button
-        onClick={() =>
-          navigate({ to: "/browse", search: { event: eventType, place: location, budget } })
-        }
+        onClick={() => navigate({ to: "/browse" })}
         className="w-full rounded-[14px] bg-clay px-8 py-4 font-medium text-clay-foreground transition-transform hover:scale-[1.02] md:w-auto"
       >
         Find Planners
