@@ -15,7 +15,7 @@ export const Route = createFileRoute("/dashboard")({
       { property: "og:description", content: description },
     ],
   }),
-  component: ClientDashboard;
+  component: ClientDashboard,
 });
 
 function ClientDashboard() {
